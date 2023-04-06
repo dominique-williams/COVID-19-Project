@@ -5,5 +5,6 @@ How to use Microsoft SQL Server to manipulate and analyze COVID-19 data from Jan
 4. Which countries have the highest death count per population?
 5. Which continent has the highest death count per population?
 6. What percentage of the population has received at least one Covid Vaccine?
+
 Analyzing this data was important because the pandemic marked a pivotal moment in my life. I wanted to be able to visualize and have a broader context of this real-life event. As someone who has survived the pandemic, creating this project has increased my gratitude and I hope it does the same for all who view it. 
 Please view the Tableau dashboard that corresponds with this data: https://public.tableau.com/app/profile/dominique.williams1097/viz/COVID-19JAN2020-MAR2021/Dashboard1
