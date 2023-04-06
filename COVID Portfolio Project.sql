@@ -10,7 +10,7 @@ From CovidDeaths
 Where continent is not null
 Order by 3,4
 
--- Select data that we are going to be staring with
+-- Select data that I am going to be staring with
 
 Select location, date, total_cases, new_cases, total_deaths, population
 From CovidDeaths
@@ -28,6 +28,7 @@ Order by 1,2
 
 -- Total Cases vs Population
 -- Shows what percentage of population caught COVID
+
 Select location, date, population, total_cases, (total_cases/population)*100 as [Population Infection Rate]
 From CovidDeaths
 --Where location like '%states%' 
@@ -54,7 +55,6 @@ Group by location
 Order by [Total Death Count] desc
 
 --Breaking thing down by Continent
-
 --Showing continents with the highest death count per population
 
 Select continent, MAX(cast(total_deaths as int)) as [Total Death Count]
@@ -66,6 +66,7 @@ Order by [Total Death Count] desc
 
 
 --Global Numbers
+
 Select date, SUM(new_cases) as[Total Cases], SUM(cast(new_deaths as int))as [Total Deaths], SUM(cast(new_deaths as int))/SUM(new_cases) as [Death Percentage Globally]
 From CovidDeaths
 Where continent is not null
@@ -73,7 +74,7 @@ Group by date
 Order by 1,2
 
 -- Total Population vs Vaccinations
--- Shows percentage of population that has recieved at least on Covid Vaccine 
+-- Shows percentage of the population that has received at least one Covid Vaccine 
 
 Select d.continent, d.location, d.date, d.population, v.new_vaccinations
 ,SUM(CONVERT(int,v.new_vaccinations)) OVER (Partition by d.location Order by d.location, d.date) as [Rolling Vaccinations]
